@@ -14,9 +14,9 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Zehua Rankie Jiang's page # the main title
+title: Zehua Jiang # the main title
 
-tagline: Welcome to my page # it will display as the sub-title
+tagline: This is Rankie speaking~ # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   -
@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 url: "https://boiledbroccoli.github.io/"
 
 github:
-  username: github_username # change to your github username
+  username: boiledbroccoli # change to your github username
 
 twitter:
   username: rankiejiang # change to your twitter username
@@ -96,7 +96,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: ./_attachments/avatar.jpg
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -110,7 +110,7 @@ comments:
   provider: # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
-    shortname: rankiej # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
+    shortname: rjs-page # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
     repo: # <gh-username>/<repo>
