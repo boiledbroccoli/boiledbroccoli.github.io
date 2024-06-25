@@ -35,12 +35,12 @@ I will test the annotation accuracy here with different values of K (ranging fro
 
 # Replication🙌: How to do the few-shot learning like Stavropoulos et al.(2024) in python
 *This replication focuses solely on the 'perspective' dimension. All the codes and prompts are available on their[osf](https://osf.io/9dr8p/?view_only=8f6f2df837994e209ff546561fd92e5a)*
-![The procedure of use both open-sourced and close-sourced models to annotate in Stavropoulos et al.(2024) ](image.png)
+![The procedure of use both open-sourced and close-sourced models to annotate in Stavropoulos et al.(2024) ](/assets/img/image.png)
 The image above shows how the paper trained their models to annotate text. 
 
 ## Preparation of the prompt👩🏻‍💻
 The first step is to define the category, construct the coding guide, and **use GPT-4 to clarify the prompt** to ensure there is no ambiguity. For the 'perspective' dimension, the label and definition are as follows:
-![alt text](image-2.png)
+![alt text](/assets/img/image-2.png)
 
 ### Instruction for annotation
 With the coding guide in hand, combine it with the prompt to construct the instruction for the LLM (acting as the 'system', which is crucial for understanding the user's intention. I may write a blog later about the differences between system, user, and assistant roles). The following is the prompt construct. The prompt uses the **'personas creation'** technique, widely employed in prompt engineering, to focus the context on a certain area, thus returning answers more relevant to the question. Here, by describing the personas as *'intelligent assistant'* and *specifying the function*, the LLM follows the task more closely.
@@ -48,7 +48,7 @@ With the coding guide in hand, combine it with the prompt to construct the instr
 Also, note that **"###"** is used in the prompt to separate the instructions. For more information, refer to the [OpenAI help](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api)).
 Additionally, the prompt restricts the output format
 
-![prompt used in Stavropoulos et al.(2024)](image-1.png)
+![prompt used in Stavropoulos et al.(2024)](/assets/img/image-1.png)
 
 ### Prompt for examples generation
 Before they actually sent it to GPT, they asked GPT to generate examples for few-shot training using the examples in the coding guide. Since I haven't found the exact prompt used in Stavropoulos et al. (2024), I edited the prompt from the instruction for this task (which I saved as 'prompt_exp_gen.txt'):
