@@ -4,7 +4,7 @@ title: "How to do few-shot learning with GPT like Stavropoulos et al.(2024) (in 
 date: 2024-06-23 16:09 +0800
 toc: true
 comments: true
-categories: [‘Paper explaining', 'LLM']
+categories: [Paper explaining, LLM]
 tags: ['METHODS','BRM','few-shot','PRACTICE','support set'] 
 
 ---
