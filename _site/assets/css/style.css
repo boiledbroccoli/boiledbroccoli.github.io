@@ -85,7 +85,9 @@ body {
     font-size: 16px;
     line-height: 1.7;
     margin-bottom: 20px;
+    text-align: justify;
 }
+
 
 .bio-content p {
     margin-bottom: 15px;
