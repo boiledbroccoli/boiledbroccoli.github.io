@@ -1,0 +1,19 @@
+---
+layout: default
+title: CV
+permalink: /cv/
+---
+
+<div class="cv-container">
+    <h1>Curriculum Vitae</h1>
+    
+    {% if site.cv_pdf %}
+        <embed src="{{ site.cv_pdf | relative_url }}" type="application/pdf" class="cv-embed">
+        
+        <div class="cv-download">
+            <a href="{{ site.cv_pdf | relative_url }}" download>Download PDF</a>
+        </div>
+    {% else %}
+        <p>CV file not found. Please add your CV PDF to the assets folder and update the cv_pdf setting in _config.yml</p>
+    {% endif %}
+</div>

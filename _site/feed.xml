@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-07-08T03:58:15+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Rankie</title><subtitle>A minimalist personal website showcasing my work and thoughts.
+</subtitle><entry><title type="html">Welcome to My Notes</title><link href="http://localhost:4000/2025/01/01/welcome/" rel="alternate" type="text/html" title="Welcome to My Notes" /><published>2025-01-01T00:00:00+00:00</published><updated>2025-01-01T00:00:00+00:00</updated><id>http://localhost:4000/2025/01/01/welcome</id><content type="html" xml:base="http://localhost:4000/2025/01/01/welcome/"><![CDATA[<p>This is your first blog post! You can write your thoughts, research notes, or any other content here.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>To add more posts, simply create new markdown files in the <code class="language-plaintext highlighter-rouge">_posts</code> directory with the format <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>Clean, minimalist design</li>
+  <li>Search functionality</li>
+  <li>Responsive layout</li>
+  <li>Easy to customize</li>
+</ul>
+
+<p>Start writing your own posts and share your thoughts with the world!</p>]]></content><author><name></name></author><summary type="html"><![CDATA[This is your first blog post! You can write your thoughts, research notes, or any other content here.]]></summary></entry></feed>

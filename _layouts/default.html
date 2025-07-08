@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    {% seo %}
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">Home</a>
+                <span class="nav-separator">/</span>
+                <a href="{{ '/cv' | relative_url }}" class="nav-link {% if page.url == '/cv/' %}active{% endif %}">CV</a>
+                <span class="nav-separator">/</span>
+                <a href="{{ '/notes' | relative_url }}" class="nav-link {% if page.url contains '/notes' %}active{% endif %}">Notes</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            {{ content }}
+        </main>
+
+        <footer class="footer">
+            <p>Last updated {{ site.time | date: "%d %b %Y" }}</p>
+        </footer>
+    </div>
+</body>
+</html>

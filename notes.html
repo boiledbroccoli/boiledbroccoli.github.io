@@ -1,0 +1,77 @@
+---
+layout: default
+title: Notes
+permalink: /notes/
+---
+
+<div class="notes-container">
+    <h1>Notes</h1>
+    
+    <div class="search-container">
+        <input type="text" id="search-box" class="search-box" placeholder="Search notes...">
+    </div>
+    
+    <div id="posts-container">
+        <ul class="posts-list">
+            {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+            {% for post in sorted_posts %}
+                <li class="post-item" data-title="{{ post.title | downcase }}" data-content="{{ post.content | strip_html | downcase }}" data-date="{{ post.date | date: '%Y-%m-%d' }}">
+                    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                    <p class="post-date">{{ post.date | date: "%B %d, %Y" }}</p>
+                    <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 200 }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        
+        {% if site.posts.size == 0 %}
+            <div class="no-results">
+                <p>No posts found. Start writing your first note!</p>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBox = document.getElementById('search-box');
+    const postsContainer = document.getElementById('posts-container');
+    const postItems = document.querySelectorAll('.post-item');
+    
+    searchBox.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query === '') {
+            // Show all posts
+            postItems.forEach(item => {
+                item.style.display = 'block';
+            });
+            return;
+        }
+        
+        let visibleCount = 0;
+        
+        postItems.forEach(item => {
+            const title = item.getAttribute('data-title');
+            const content = item.getAttribute('data-content');
+            
+            if (title.includes(query) || content.includes(query)) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show "no results" message if no posts match
+        const existingNoResults = postsContainer.querySelector('.no-results');
+        if (visibleCount === 0 && !existingNoResults) {
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.innerHTML = '<p>No posts found matching your search.</p>';
+            postsContainer.appendChild(noResults);
+        } else if (visibleCount > 0 && existingNoResults) {
+            existingNoResults.remove();
+        }
+    });
+});
+</script>

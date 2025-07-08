@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Notes | Rankie</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A minimalist personal website showcasing my work and thoughts." />
+<meta property="og:description" content="A minimalist personal website showcasing my work and thoughts." />
+<link rel="canonical" href="http://localhost:4000/notes/" />
+<meta property="og:url" content="http://localhost:4000/notes/" />
+<meta property="og:site_name" content="Rankie" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Notes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A minimalist personal website showcasing my work and thoughts.","headline":"Notes","url":"http://localhost:4000/notes/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <a href="/" class="nav-link ">Home</a>
+                <span class="nav-separator">/</span>
+                <a href="/cv" class="nav-link ">CV</a>
+                <span class="nav-separator">/</span>
+                <a href="/notes" class="nav-link active">Notes</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            <div class="notes-container">
+    <h1>Notes</h1>
+    
+    <div class="search-container">
+        <input type="text" id="search-box" class="search-box" placeholder="Search notes...">
+    </div>
+    
+    <div id="posts-container">
+        <ul class="posts-list">
+            
+            
+                <li class="post-item" data-title="welcome to my notes" data-content="this is your first blog post! you can write your thoughts, research notes, or any other content here.
+
+getting started
+
+to add more posts, simply create new markdown files in the _posts directory with the format yyyy-mm-dd-title.md.
+
+features
+
+
+  clean, minimalist design
+  search functionality
+  responsive layout
+  easy to customize
+
+
+start writing your own posts and share your thoughts with the world!
+" data-date="2025-01-01">
+                    <h2><a href="/2025/01/01/welcome/">Welcome to My Notes</a></h2>
+                    <p class="post-date">January 01, 2025</p>
+                    <p class="post-excerpt">This is your first blog post! You can write your thoughts, research notes, or any other content here.
+</p>
+                </li>
+            
+        </ul>
+        
+        
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchBox = document.getElementById('search-box');
+    const postsContainer = document.getElementById('posts-container');
+    const postItems = document.querySelectorAll('.post-item');
+    
+    searchBox.addEventListener('input', function() {
+        const query = this.value.toLowerCase().trim();
+        
+        if (query === '') {
+            // Show all posts
+            postItems.forEach(item => {
+                item.style.display = 'block';
+            });
+            return;
+        }
+        
+        let visibleCount = 0;
+        
+        postItems.forEach(item => {
+            const title = item.getAttribute('data-title');
+            const content = item.getAttribute('data-content');
+            
+            if (title.includes(query) || content.includes(query)) {
+                item.style.display = 'block';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show "no results" message if no posts match
+        const existingNoResults = postsContainer.querySelector('.no-results');
+        if (visibleCount === 0 && !existingNoResults) {
+            const noResults = document.createElement('div');
+            noResults.className = 'no-results';
+            noResults.innerHTML = '<p>No posts found matching your search.</p>';
+            postsContainer.appendChild(noResults);
+        } else if (visibleCount > 0 && existingNoResults) {
+            existingNoResults.remove();
+        }
+    });
+});
+</script>
+        </main>
+
+        <footer class="footer">
+            <p>Last updated 08 Jul 2025</p>
+        </footer>
+    </div>
+</body>
+</html>

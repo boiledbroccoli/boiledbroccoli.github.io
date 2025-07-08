@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<div class="home-content">
+    <div class="intro-text">
+        <h1>Hi, this is {{ site.name }}</h1>
+        <div class="bio-content">
+            {{ site.bio | markdownify }}
+        </div>
+        <p class="keywords"><strong>Keywords:</strong> {{ site.keywords }}</p>
+    </div>
+    
+    <div class="profile-section">
+        <div class="profile-image">
+            {% if site.profile_image %}
+                <img src="{{ site.profile_image | relative_url }}" alt="{{ site.name }}">
+            {% else %}
+                <div class="profile-placeholder"></div>
+            {% endif %}
+        </div>
+        
+        <div class="social-links">
+            {% if site.social.custom_link %}
+                <a href="{{ site.social.custom_link.url }}">{{ site.social.custom_link.text }}</a>
+            {% endif %}
+            {% if site.social.orcid %}
+                <a href="https://orcid.org/{{ site.social.orcid }}">ORCID</a>
+            {% endif %}
+            {% if site.social.github %}
+                <a href="https://github.com/{{ site.social.github }}">Github</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="news-section">
+    <h2>News</h2>
+    <ul class="news-list">
+        {% assign sorted_news = site.news | sort: 'date' | reverse %}
+        {% for news in sorted_news limit: 10 %}
+            <li class="news-item">
+                <span class="news-date">{{ news.date | date: "%Y %b %d" }}:</span>
+                <span class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' | strip }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
