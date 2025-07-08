@@ -4,7 +4,7 @@ email: rankiejiang97@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   A minimalist personal website showcasing my work and thoughts.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://boiledbroccoli.github.io" # the base hostname & protocol for your site
+url: "https://boiledbroccoli.github.io" # the base hostname & protocol for your site
 twitter_username: yourusername
 github_username: boiledbroccoli
 orcid_id: 0009-0005-2868-324X
